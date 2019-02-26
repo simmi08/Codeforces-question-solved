@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool uni(int t)
+{
+	int a[10]={0};
+	string s = to_string(t);
+	for(int i=0;i<4;i++)
+	{
+		a[s[i]-'0']++;
+	}
+	int p=0;
+	for(int i=0;i<10;i++)
+	{
+		if(a[i]==1)
+		p++;//cout << a[i];
+	}
+	if(p==4)
+	return true;
+	else
+	return false;
+}
+int main()
+{
+	int t;
+	cin >> t;
+	for(int i=t+1;;i++)
+	{
+		//cout << uni(i);
+		if(uni(i))
+		{
+			cout << i << endl;
+			break;
+		}
+	}
+}
