@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int a,b,c,d,k;
+		cin >> a >> b >> c >> d >> k;
+		int m = a/c;
+		if(a%c!=0)
+		m+=1;
+		int n = b/d;
+		if(b%d!=0)
+		n+=1;
+		if(m+n>k)
+		cout << "-1" << "\n";
+		else
+		cout << m << " " << n << "\n";
+	}
+}
