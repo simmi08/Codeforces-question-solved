@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int Digits(long long int n) 
+{ 
+    int largest = 0; 
+    int smallest = 9; 
+  
+    while (n) { 
+        int r = n % 10; 
+        largest = max(r, largest); 
+        smallest = min(r, smallest); 
+  
+        n = n / 10; 
+    } 
+    return largest* smallest;
+} 
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		long long int a,k;
+		cin >> a >> k;k=k-1;
+		while(k--)
+		{
+			int increase = Digits(a);
+			if(increase==0)
+			break;
+			else
+			a += increase;
+		}
+		cout << a << "\n";
+	}
+}
