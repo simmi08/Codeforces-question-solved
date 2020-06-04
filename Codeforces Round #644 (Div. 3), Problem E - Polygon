@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int n;
+		cin >> n;
+		vector < string > a;
+		for(int i=0;i<n;i++)
+		{
+			string s;
+			cin >> s;
+			a.push_back(s);
+		}
+		int flag = 0 ;
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				if(i!=n-1 && j!= n-1)
+				{
+					if((a[i][j+1]!='1' && a[i+1][j]!='1')&&a[i][j]=='1')
+					{
+						flag = 1;
+						cout << "NO\n" ;
+						break;
+					}
+				}
+			}
+			if(flag)
+			break;
+		}
+		if(!flag)
+		cout << "YES\n";
+	}
+}
