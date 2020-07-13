@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int n;
+		cin >> n;
+		int cont3 = 0, cont2=0;
+		if(n==1)
+		cout << "0\n";
+		else
+		{
+			int p=n;
+			while(p%3==0){
+			cont3++;
+			p/=3;}
+			while(p%2==0)
+			{
+				cont2++;
+				p/=2;
+			}
+			if(p!=1)
+			cout << "-1\n";
+			else if(cont3 < cont2)
+			cout << "-1\n";
+			else
+			{
+				cout << cont3 + (cont3-cont2) << "\n";
+			}
+		}
+	}
+}
