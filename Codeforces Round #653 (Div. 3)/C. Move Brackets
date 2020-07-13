@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin >>t;
+	while(t--)
+	{
+		int n;
+		cin >> n;
+		string s;
+		cin >> s;
+		stack <char> st;
+		int i=0;
+		while(i!=s.size())
+		{
+			if(st.empty()||s[i]=='(')
+			st.push(s[i]);
+			else
+			{
+				if(st.top()=='(' && s[i]==')')
+				st.pop();
+				else
+				st.push(s[i]);
+			}
+			i++;
+		}
+		if(st.size()==0)
+		cout << "0\n";
+		else
+		cout << st.size()/2<< "\n";
+	}
+}
