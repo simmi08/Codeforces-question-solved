@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int n,k;
+		cin >> n >> k;
+		vector <int>a,b;
+		for(int i=0;i<n;i++)
+		{
+			int m;
+			cin >> m;
+			a.push_back(m);
+		}
+		for(int i=0;i<n;i++)
+		{
+			int m;
+			cin >> m;
+			b.push_back(m);
+		}
+		sort(a.begin(),a.end());
+		sort(b.begin(),b.end());
+		int cont =0;int p=n-1;
+		for(int i=0;i<n;i++)
+		{
+			if(a[i]<b[p] && cont < k)
+			{
+				a[i] = b[p];
+				p--;
+				cont++;
+			}
+			else
+			break;
+		}
+		int sum =0;
+		for(int i=0;i<n;i++)
+		sum += a[i];
+		cout << sum << "\n";
+	}
+}
